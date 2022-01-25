@@ -15,9 +15,10 @@ app.get('/', (req, res) => {
 });
 
 // Controllers
-// Forward all requests to localhost:3111/posts to the post controller
+// Forward all requests to localhost:3001/posts to the post controller
 app.use('/posts', postController);
 
-app.listen(3111, () => {
+app.listen(3001, () => {
+	console.log('connected to port 3001!');
 	console.log('We can get posting...🐧');
 });
