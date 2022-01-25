@@ -18,6 +18,16 @@ router.get('/', async (req, res, next) => {
 	}
 });
 
+router.get('/:state', async (req, res, next) => {
+	try {
+		const posts = await Post.find({ state: `${req.params.state}` });
+
+		res.json(posts);
+	} catch (error) {
+		next(error);
+	}
+});
+
 //get one post by id
 router.get('/:id', async (req, res, next) => {
 	try {
@@ -27,6 +37,16 @@ router.get('/:id', async (req, res, next) => {
 		} else {
 			res.sendStatus(404);
 		}
+	} catch (error) {
+		next(error);
+	}
+});
+
+//create a post
+router.post('/', async (req, res, next) => {
+	try {
+		const newPost = await Post.create(req.body);
+		res.status(201).json(newPost);
 	} catch (error) {
 		next(error);
 	}
