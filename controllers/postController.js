@@ -20,7 +20,7 @@ router.get('/', async (req, res, next) => {
 
 // Get posts filtered by state
 // http://localhost:3001/api/posts/state
-router.get('/:state', async (req, res, next) => {
+router.get('/state/:state', async (req, res, next) => {
 	try {
 		const posts = await Post.find({ state: `${req.params.state}` });
 
@@ -32,7 +32,7 @@ router.get('/:state', async (req, res, next) => {
 
 //get one post by id
 // http://localhost:3001/api/posts/id
-router.get('/:id', async (req, res, next) => {
+router.get('/id/:id', async (req, res, next) => {
 	try {
 		const post = await Post.findById(req.params.id);
 		if (post) {
@@ -58,7 +58,7 @@ router.post('/', async (req, res, next) => {
 
 // update a post
 // http://localhost:3001/api/posts/id
-router.put('/:id', async (req, res, next) => {
+router.put('/id/:id', async (req, res, next) => {
 	try {
 		const postToUpdate = await Post.findByIdAndUpdate(req.params.id, req.body, {
 			new: true,
@@ -71,7 +71,7 @@ router.put('/:id', async (req, res, next) => {
 
 // Update: Partially edit a post
 // http://localhost:3001/api/posts/id
-router.patch('/:id', async (req, res, next) => {
+router.patch('/id/:id', async (req, res, next) => {
 	console.log(req.body);
 	try {
 		const postToUpdate = await Post.findByIdAndUpdate(
@@ -88,7 +88,7 @@ router.patch('/:id', async (req, res, next) => {
 
 // Delete: Remove a post
 // http://localhost:3001/api/posts/id
-router.delete('/:id', async (req, res, next) => {
+router.delete('/id/:id', async (req, res, next) => {
 	try {
 		const deletedPost = await Post.findOneAndDelete({
 			_id: req.params.id,
