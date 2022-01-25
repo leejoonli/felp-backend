@@ -18,4 +18,18 @@ router.get('/', async (req, res, next) => {
 	}
 });
 
+//get one post by id
+router.get('/:id', async (req, res, next) => {
+	try {
+		const post = await Post.findById(req.params.id);
+		if (post) {
+			res.json(post);
+		} else {
+			res.sendStatus(404);
+		}
+	} catch (error) {
+		next(error);
+	}
+});
+
 module.exports = router;
