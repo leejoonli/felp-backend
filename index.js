@@ -11,12 +11,12 @@ app.use(cors());
 
 // Redirect
 app.get('/', (req, res) => {
-	res.redirect('/posts');
+	res.redirect('/api/posts');
 });
 
 // Controllers
-// Forward all requests to localhost:3001/posts to the post controller
-app.use('/posts', postController);
+// Forward all requests to localhost:3001/api/posts to the post controller
+app.use('/api/posts', postController);
 
 app.listen(3001, () => {
 	console.log('connected to port 3001!');
