@@ -1,0 +1,25 @@
+[{
+	"state": "PA",
+	"city": "Philadelphia",
+	"title": "Awesome Cocktail Place",
+	"date": "01-29-22",
+	"message": "Hey all! You must go to Charlie was a sinner! The cocktails are amazing! It is near center city and has an awesome vibe! ",
+	"years_of_residence": 20,
+	"type": "Food",
+	"user": {
+		"name": "Justin L."
+	}
+},
+{
+	"state": "NJ",
+	"city": "New Brunswick",
+	"title": "Awesome Korean BBQ",
+	"date": "01-14-22",
+	"message": "Hey all! YOu must go to Kim's BBQ! The food slaps! It is near the outskirts of the city on 29th and Heroku! ",
+	"years_of_residence": 10,
+	"type": "Food",
+	"user": {
+		"name": "Andrew K."
+	}
+}
+]
