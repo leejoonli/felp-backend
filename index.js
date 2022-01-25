@@ -21,3 +21,4 @@ app.use("/posts", postController);
 app.listen(3111, () => {
 	console.log("Let's get posting...🐧");
 });
+
