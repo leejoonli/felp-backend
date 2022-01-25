@@ -1,0 +1,114 @@
+[{
+	"state": "PA",
+	"city": "Philadelphia",
+	"title": "Awesome Cocktail Place",
+	"date": "01-29-22",
+	"message": "Hey all! You must go to Charlie was a sinner! The cocktails are amazing! It is near center city and has an awesome vibe! ",
+	"years_of_residence": 20,
+	"type": "Food",
+	"user": {
+		"name": "Justin L."
+	}
+},
+{
+	"state": "NJ",
+	"city": "New Brunswick",
+	"title": "Awesome Korean BBQ",
+	"date": "01-14-22",
+	"message": "Hey all! YOu must go to Kim's BBQ! The food slaps! It is near the outskirts of the city on 29th and Heroku! ",
+	"years_of_residence": 10,
+	"type": "Food",
+	"user": {
+		"name": "Andrew K."
+	}
+},
+{
+	"state": "CA",
+	"city": "Los Angeles",
+	"title": "Wicked Scallops",
+	"date": "01-17-22",
+	"message": "Hey all! It's basically like the northwest is in LA now! Totally cool!  ",
+	"years_of_residence": 3,
+	"type": "Food",
+	"user": {
+		"name": "Jeremiah L."
+	}
+},{
+	"state": "MD",
+	"city": "Baltimore",
+	"title": "Crabby Crabs",
+	"date": "01-04-22",
+	"message": "Bro! This food is wildly good. Crabs for days! ",
+	"years_of_residence": 7,
+	"type": "Food",
+	"user": {
+		"name": "Frankz C."
+	}
+},{
+	"state": "GA",
+	"city": "Atlanta",
+	"title": "Awesome Pub",
+	"date": "01-27-22",
+	"message": "Howdy! If anyone is in the ATL area, checkout the wrecking brew pub! Cherry Tart Sour Ale is bomb! ",
+	"years_of_residence": 13,
+	"type": "Food",
+	"user": {
+		"name": "Chris K."
+	}
+},{
+	"state": "NY",
+	"city": "Brooklyn",
+	"title": "Bar hop",
+	"date": "04-14-21",
+	"message": "Went to this place called the Robinson and had some dope drinks.",
+	"years_of_residence": 12,
+	"type": "Food",
+	"user": {
+		"name": "Killy G."
+	}
+},{
+	"state": "PA",
+	"city": "Ardmore",
+	"title": "More Whiskey Please",
+	"date": "05-14-21",
+	"message": "Go to the Whiskey Doctor!",
+	"years_of_residence": 10,
+	"type": "Food",
+	"user": {
+		"name": "Gorge B."
+	}
+},{
+	"state": "CA",
+	"city": "Los Angeles",
+	"title": "Mama's Shelter",
+	"date": "01-09-21",
+	"message": "Hit that rooftop!! The view is sweet.",
+	"years_of_residence": 4,
+	"type": "Food",
+	"user": {
+		"name": "Alyssa W."
+	}
+},{
+	"state": "MD",
+	"city": "Fredrick",
+	"title": "Bar",
+	"date": "01-14-22",
+	"message": "Found a dive bar near Elk Lane and the Repo Center! It's called the Low Down",
+	"years_of_residence": 7,
+	"type": "Food",
+	"user": {
+		"name": "Billy B."
+	}
+},{
+	"state": "NJ",
+	"city": "Wildwood",
+	"title": "Pizza",
+	"date": "01-14-21",
+	"message": "Sam's Pizza! Nuff said! ",
+	"years_of_residence": 9,
+	"type": "Food",
+	"user": {
+		"name": "Arden K."
+	}
+}
+]
