@@ -5,7 +5,7 @@ const PostSchema = new Schema({
 	state: String,
 	city: String,
 	title: String,
-	date: Date,
+	date: String,
 	message: String,
 	years_of_residence: Number,
 	type: String,
