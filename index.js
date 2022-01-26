@@ -1,6 +1,7 @@
 // Dependencies
 const express = require('express');
 const app = express();
+app.set("port", process.env.PORT || 3001);
 const cors = require('cors');
 const postController = require('./controllers/postController');
 
@@ -18,7 +19,7 @@ app.get('/', (req, res) => {
 // Forward all requests to localhost:3001/api/posts to the post controller
 app.use('/api/posts', postController);
 
-app.listen(3001, () => {
-	console.log('connected to port 3001!');
+app.listen(app.get("port"), () => {
+	console.log(`connected to port ${app.get('port')}!`);
 	console.log('We can get posting...🐧');
 });
