@@ -45,6 +45,15 @@ router.get('/id/:id', async (req, res, next) => {
 	}
 });
 
+router.get('/user/:name', async (req, res, next) => {
+	try {
+		const name = await Post.find({ user: { name: `${req.params.name}` } });
+		res.json(name);
+	} catch (error) {
+		next(error);
+	}
+});
+
 //create a post
 // http://localhost:3001/api/posts
 router.post('/', async (req, res, next) => {
