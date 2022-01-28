@@ -31,15 +31,18 @@ router.post('/signup', async (req, res, next) => {
 
 // SIGN IN
 // POST /api/signin
-router.post('/signin', (req, res, next) => {
-	User.findOne({ email: req.body.email })
+router.post('/signin', async (req, res, next) => {
+	try {
 		// Pass the user and the request to createUserToken
-		.then((user) => createUserToken(req, user))
+		const user = await User.findOne({ email: req.body.email });
 		// createUserToken will either throw an error that
 		// will be caught by our error handler or send back
 		// a token that we'll in turn send to the client.
-		.then((token) => res.json({ token }))
-		.catch(next);
+		const token = await createUserToken(req, user);
+		res.status(200).json(token);
+	} catch (error) {
+		next(error);
+	}
 });
 
 module.exports = router;

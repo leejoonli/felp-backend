@@ -5,6 +5,11 @@ const cors = require('cors');
 const postController = require('./controllers/postController');
 const userController = require('./controllers/userController');
 const requestLogger = require('./db/middlewear/request_logger');
+// Require the error handlers
+const {
+	handleErrors,
+	handleValidationErrors,
+} = require('./db/middlewear/custom_errors');
 
 // Middleware
 app.use(express.json());
@@ -21,6 +26,10 @@ app.get('/', (req, res) => {
 // Forward all requests to localhost:3001/api/posts to the post controller
 app.use('/api/posts', postController);
 app.use('/api', userController);
+
+app.use(handleValidationErrors);
+// The catch all for handling errors
+app.use(handleErrors);
 
 app.listen(3001, () => {
 	console.log('connected to port 3001!');
