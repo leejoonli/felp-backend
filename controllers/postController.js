@@ -15,7 +15,7 @@ const router = express.Router();
 //Get all posts
 router.get('/', async (req, res, next) => {
 	try {
-		const posts = await Post.find({});
+		const posts = await Post.find({}).populate('owner');
 
 		res.json(posts);
 	} catch (error) {
@@ -63,9 +63,11 @@ router.get('/id/:id', async (req, res, next) => {
 });
 
 // get post by user's name
-router.get('/user/:name', async (req, res, next) => {
+router.get('/username/:username', async (req, res, next) => {
 	try {
-		const name = await Post.find({ user: { name: `${req.params.name}` } });
+		const name = await Post.find({
+			owner: { username: `${req.params.username}` },
+		});
 		res.json(name);
 	} catch (error) {
 		next(error);
