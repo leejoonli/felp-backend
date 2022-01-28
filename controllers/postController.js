@@ -76,7 +76,7 @@ router.get('/user/:name', async (req, res, next) => {
 // http://localhost:3001/api/posts
 router.post('/', requireToken, async (req, res, next) => {
 	try {
-		const newPost = await Post.create(req.body);
+		const newPost = await Post.create({ ...req.body, owner: req.user._id });
 		res.status(201).json(newPost);
 	} catch (error) {
 		next(error);
@@ -92,7 +92,7 @@ router.put('/id/:id', requireToken, async (req, res, next) => {
 			handleValidateOwnership(req, post);
 			const postToUpdate = await Post.findByIdAndUpdate(
 				req.params.id,
-				req.body,
+				{ ...req.body, owner: req.user._id },
 				{
 					new: true,
 				}
