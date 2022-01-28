@@ -30,6 +30,18 @@ router.get('/state/:state', async (req, res, next) => {
 	}
 });
 
+// Get posts filtered by type
+// http://localhost:3001/api/posts/type
+router.get('/type/:type', async (req, res, next) => {
+	try {
+		const posts = await Post.find({ type: `${req.params.type}` });
+
+		res.json(posts);
+	} catch (error) {
+		next(error);
+	}
+});
+
 //get one post by id
 // http://localhost:3001/api/posts/id
 router.get('/id/:id', async (req, res, next) => {
