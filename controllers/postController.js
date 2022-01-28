@@ -74,12 +74,9 @@ router.get('/user/:name', async (req, res, next) => {
 
 //create a post
 // http://localhost:3001/api/posts
-router.post('/', handleValidateId, requireToken, async (req, res, next) => {
+router.post('/', requireToken, async (req, res, next) => {
 	try {
-		const newPost = await Post.create({
-			...req.body,
-			owner: req.owner,
-		});
+		const newPost = await Post.create(req.body);
 		res.status(201).json(newPost);
 	} catch (error) {
 		next(error);
@@ -88,86 +85,71 @@ router.post('/', handleValidateId, requireToken, async (req, res, next) => {
 
 // update a post
 // http://localhost:3001/api/posts/id
-router.put(
-	'/id/:id',
-	handleValidateId,
-	requireToken,
-	async (req, res, next) => {
-		try {
-			const post = await Post.findById(req.params.id);
-			if (post) {
-				handleValidateOwnership(req, post);
-				const postToUpdate = await Post.findByIdAndUpdate(
-					req.params.id,
-					req.body,
-					{
-						new: true,
-					}
-				);
-				res.json(postToUpdate);
-			} else {
-				res.sendStatus(404);
-			}
-		} catch (error) {
-			next(error);
+router.put('/id/:id', requireToken, async (req, res, next) => {
+	try {
+		const post = await Post.findById(req.params.id);
+		if (post) {
+			handleValidateOwnership(req, post);
+			const postToUpdate = await Post.findByIdAndUpdate(
+				req.params.id,
+				req.body,
+				{
+					new: true,
+				}
+			);
+			res.json(postToUpdate);
+		} else {
+			res.sendStatus(404);
 		}
+	} catch (error) {
+		next(error);
 	}
-);
+});
 
 // Update: Partially edit a post
 // http://localhost:3001/api/posts/id
-router.patch(
-	'/id/:id',
-	handleValidateId,
-	requireToken,
-	async (req, res, next) => {
-		console.log(req.body);
-		try {
-			const post = await Post.findById(req.params.id);
-			if (post) {
-				handleValidateOwnership(req, post);
-				const postToUpdate = await Post.findByIdAndUpdate(
-					req.params.id,
-					// partially update the document with the request body's fields
-					{ $set: req.body },
-					{ new: true }
-				);
-				res.json(postToUpdate);
-			} else {
-				res.sendStatus(404);
-			}
-		} catch (error) {
-			next(error);
+router.patch('/id/:id', requireToken, async (req, res, next) => {
+	console.log(req.body);
+	try {
+		const post = await Post.findById(req.params.id);
+		if (post) {
+			handleValidateOwnership(req, post);
+			const postToUpdate = await Post.findByIdAndUpdate(
+				req.params.id,
+				// partially update the document with the request body's fields
+				{ $set: req.body },
+				{ new: true }
+			);
+			res.json(postToUpdate);
+		} else {
+			res.sendStatus(404);
 		}
+	} catch (error) {
+		next(error);
 	}
-);
+});
 
 // Delete: Remove a post
 // http://localhost:3001/api/posts/id
-router.delete(
-	'/id/:id',
-	handleValidateId,
-	requireToken,
-	async (req, res, next) => {
-		try {
-			const post = await Post.findById(req.params.id);
-			if (post) {
-				handleValidateOwnership(req, post);
-				const deletedPost = await Post.findOneAndDelete({
-					_id: req.params.id,
-				});
-				if (deletedPost) {
-					res.json(deletedPost);
-				} else {
-					res.sendStatus(404);
-				}
+router.delete('/id/:id', requireToken, async (req, res, next) => {
+	try {
+		const post = await Post.findById(req.params.id);
+		if (post) {
+			handleValidateOwnership(req, post);
+			const deletedPost = await Post.findOneAndDelete({
+				_id: req.params.id,
+			});
+			if (deletedPost) {
+				res.json(deletedPost);
 			} else {
 				res.sendStatus(404);
 			}
-		} catch (error) {
-			next(error);
+		} else {
+			res.sendStatus(404);
 		}
+	} catch (error) {
+		next(error);
 	}
-);
+});
 
 module.exports = router;
