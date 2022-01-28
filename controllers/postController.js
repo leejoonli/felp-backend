@@ -1,5 +1,10 @@
 //Require the express module
 const express = require('express');
+const { requireToken } = require('../db/middlewear/auth');
+const {
+	handleValidateId,
+	handleValidateOwnership,
+} = require('../db/middlewear/custom_errors');
 
 //Import the post model
 const Post = require('../db/models/Post');
@@ -30,6 +35,18 @@ router.get('/state/:state', async (req, res, next) => {
 	}
 });
 
+// Get posts filtered by type
+// http://localhost:3001/api/posts/type
+router.get('/type/:type', async (req, res, next) => {
+	try {
+		const posts = await Post.find({ type: `${req.params.type}` });
+
+		res.json(posts);
+	} catch (error) {
+		next(error);
+	}
+});
+
 //get one post by id
 // http://localhost:3001/api/posts/id
 router.get('/id/:id', async (req, res, next) => {
@@ -45,6 +62,7 @@ router.get('/id/:id', async (req, res, next) => {
 	}
 });
 
+// get post by user's name
 router.get('/user/:name', async (req, res, next) => {
 	try {
 		const name = await Post.find({ user: { name: `${req.params.name}` } });
@@ -56,7 +74,7 @@ router.get('/user/:name', async (req, res, next) => {
 
 //create a post
 // http://localhost:3001/api/posts
-router.post('/', async (req, res, next) => {
+router.post('/', requireToken, async (req, res, next) => {
 	try {
 		const newPost = await Post.create(req.body);
 		res.status(201).json(newPost);
@@ -67,12 +85,22 @@ router.post('/', async (req, res, next) => {
 
 // update a post
 // http://localhost:3001/api/posts/id
-router.put('/id/:id', async (req, res, next) => {
+router.put('/id/:id', requireToken, async (req, res, next) => {
 	try {
-		const postToUpdate = await Post.findByIdAndUpdate(req.params.id, req.body, {
-			new: true,
-		});
-		res.json(postToUpdate);
+		const post = await Post.findById(req.params.id);
+		if (post) {
+			handleValidateOwnership(req, post);
+			const postToUpdate = await Post.findByIdAndUpdate(
+				req.params.id,
+				req.body,
+				{
+					new: true,
+				}
+			);
+			res.json(postToUpdate);
+		} else {
+			res.sendStatus(404);
+		}
 	} catch (error) {
 		next(error);
 	}
@@ -80,16 +108,22 @@ router.put('/id/:id', async (req, res, next) => {
 
 // Update: Partially edit a post
 // http://localhost:3001/api/posts/id
-router.patch('/id/:id', async (req, res, next) => {
+router.patch('/id/:id', requireToken, async (req, res, next) => {
 	console.log(req.body);
 	try {
-		const postToUpdate = await Post.findByIdAndUpdate(
-			req.params.id,
-			// partially update the document with the request body's fields
-			{ $set: req.body },
-			{ new: true }
-		);
-		res.json(postToUpdate);
+		const post = await Post.findById(req.params.id);
+		if (post) {
+			handleValidateOwnership(req, post);
+			const postToUpdate = await Post.findByIdAndUpdate(
+				req.params.id,
+				// partially update the document with the request body's fields
+				{ $set: req.body },
+				{ new: true }
+			);
+			res.json(postToUpdate);
+		} else {
+			res.sendStatus(404);
+		}
 	} catch (error) {
 		next(error);
 	}
@@ -97,13 +131,19 @@ router.patch('/id/:id', async (req, res, next) => {
 
 // Delete: Remove a post
 // http://localhost:3001/api/posts/id
-router.delete('/id/:id', async (req, res, next) => {
+router.delete('/id/:id', requireToken, async (req, res, next) => {
 	try {
-		const deletedPost = await Post.findOneAndDelete({
-			_id: req.params.id,
-		});
-		if (deletedPost) {
-			res.json(deletedPost);
+		const post = await Post.findById(req.params.id);
+		if (post) {
+			handleValidateOwnership(req, post);
+			const deletedPost = await Post.findOneAndDelete({
+				_id: req.params.id,
+			});
+			if (deletedPost) {
+				res.json(deletedPost);
+			} else {
+				res.sendStatus(404);
+			}
 		} else {
 			res.sendStatus(404);
 		}
