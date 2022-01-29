@@ -1,10 +1,7 @@
 //Require the express module
 const express = require('express');
 const { requireToken } = require('../db/middlewear/auth');
-const {
-	handleValidateId,
-	handleValidateOwnership,
-} = require('../db/middlewear/custom_errors');
+const { handleValidateOwnership } = require('../db/middlewear/custom_errors');
 
 //Import the post model
 const Post = require('../db/models/Post');
