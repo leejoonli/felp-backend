@@ -24,7 +24,7 @@ router.get('/', async (req, res, next) => {
 // http://localhost:3001/api/posts/state
 router.get('/state/:state', async (req, res, next) => {
 	try {
-		const posts = await Post.find({ state: `${req.params.state}` });
+		const posts = await Post.find({ state: `${req.params.state}` }).populate('owner');
 
 		res.json(posts);
 	} catch (error) {
@@ -36,7 +36,7 @@ router.get('/state/:state', async (req, res, next) => {
 // http://localhost:3001/api/posts/type
 router.get('/type/:type', async (req, res, next) => {
 	try {
-		const posts = await Post.find({ type: `${req.params.type}` });
+		const posts = await Post.find({ type: `${req.params.type}` }).populate('owner');
 
 		res.json(posts);
 	} catch (error) {
