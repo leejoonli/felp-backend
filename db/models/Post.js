@@ -9,8 +9,10 @@ const PostSchema = new Schema({
 	message: String,
 	years_of_residence: Number,
 	type: String,
-	user: {
-		name: String,
+	owner: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'User',
+		required: true,
 	},
 });
 
