@@ -1,10 +1,7 @@
 //Require the express module
 const express = require('express');
 const { requireToken } = require('../db/middlewear/auth');
-const {
-	handleValidateId,
-	handleValidateOwnership,
-} = require('../db/middlewear/custom_errors');
+const { handleValidateOwnership } = require('../db/middlewear/custom_errors');
 
 //Import the post model
 const Post = require('../db/models/Post');
@@ -15,7 +12,7 @@ const router = express.Router();
 //Get all posts
 router.get('/', async (req, res, next) => {
 	try {
-		const posts = await Post.find({});
+		const posts = await Post.find({}).populate('owner');
 
 		res.json(posts);
 	} catch (error) {
@@ -63,9 +60,11 @@ router.get('/id/:id', async (req, res, next) => {
 });
 
 // get post by user's name
-router.get('/user/:name', async (req, res, next) => {
+router.get('/username/:username', async (req, res, next) => {
 	try {
-		const name = await Post.find({ user: { name: `${req.params.name}` } });
+		const name = await Post.find({
+			owner: { username: `${req.params.username}` },
+		});
 		res.json(name);
 	} catch (error) {
 		next(error);
