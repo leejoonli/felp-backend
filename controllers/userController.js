@@ -43,7 +43,7 @@ router.post('/signin', async (req, res, next) => {
 		// will be caught by our error handler or send back
 		// a token that we'll in turn send to the client.
 		const token = await createUserToken(req, user);
-		res.status(200).json({ token, username: user.username });
+		res.status(200).json({ token, username: user.username, userId: user._id });
 	} catch (error) {
 		next(error);
 	}
