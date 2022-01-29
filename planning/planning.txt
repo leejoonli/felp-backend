@@ -1,0 +1,36 @@
+- Install Backend dependencies: 
+    -̶ m̶o̶n̶g̶o̶o̶s̶e̶ -̶ D̶O̶N̶E̶
+    -̶ e̶x̶p̶r̶e̶s̶s̶ -̶ D̶O̶N̶E̶
+    -̶ d̶o̶t̶e̶n̶v̶ -̶ D̶O̶N̶E̶
+    -̶ c̶o̶r̶s̶ -̶ D̶O̶N̶E̶
+    -̶ m̶o̶c̶h̶a̶ -̶ D̶O̶N̶E̶
+    -̶ c̶h̶a̶i̶ -̶ D̶O̶N̶E̶
+    -̶ s̶u̶p̶e̶r̶t̶e̶s̶t̶ -̶ D̶O̶N̶E̶
+    -̶ a̶x̶i̶o̶s̶ -̶ D̶O̶N̶E̶
+
+- Day one: 
+    - C̶o̶n̶n̶e̶c̶t̶ J̶S̶ t̶o̶ M̶o̶n̶g̶o̶d̶b̶ -̶ D̶O̶N̶E̶
+    - S̶e̶e̶d̶ d̶a̶t̶a̶ -̶ D̶O̶N̶E̶
+    -̶ B̶u̶i̶l̶d̶ o̶u̶t̶ c̶o̶n̶t̶r̶o̶l̶l̶e̶r̶ -̶ D̶O̶N̶E̶
+    -̶ P̶o̶s̶t̶/̶P̶u̶t̶/̶P̶a̶t̶c̶h̶/̶D̶e̶l̶e̶t̶e̶ r̶e̶q̶u̶e̶s̶t̶s̶ -̶ D̶O̶N̶E̶
+    -̶ F̶i̶n̶d̶ r̶e̶s̶u̶l̶t̶s̶ b̶y̶ s̶t̶a̶t̶e̶ -̶ D̶O̶N̶E̶
+    -̶ A̶d̶d̶ 1̶0̶ o̶b̶j̶e̶c̶t̶s̶ f̶o̶r̶ s̶e̶e̶d̶ d̶a̶t̶a̶ -̶ D̶O̶N̶E̶
+    -̶ A̶d̶d̶ a̶l̶l̶ r̶o̶u̶t̶e̶s̶ a̶n̶d̶ t̶e̶s̶t̶ t̶h̶r̶o̶u̶g̶h̶ P̶o̶s̶t̶m̶a̶n̶ -̶ D̶O̶N̶E̶
+
+- Day two:
+    - A̶d̶d̶ p̶a̶t̶h̶ f̶o̶r̶ l̶i̶s̶t̶ o̶f̶ p̶o̶s̶t̶s̶ f̶r̶o̶m̶ s̶p̶e̶c̶i̶f̶i̶c̶ u̶s̶e̶r̶ -̶ D̶O̶N̶E̶
+    -̶ A̶t̶t̶e̶n̶d̶ A̶l̶u̶m̶n̶i̶ m̶e̶e̶t̶i̶n̶g̶ -̶ D̶O̶N̶E̶ 
+    -̶ S̶w̶i̶t̶c̶h̶ t̶o̶ f̶r̶o̶n̶t̶e̶n̶d̶ (̶A̶n̶d̶r̶e̶w̶ /̶ J̶u̶s̶t̶i̶n̶)̶ -̶ D̶O̶N̶E̶
+
+- Day three: 
+    - D̶e̶p̶l̶o̶y̶ b̶a̶c̶k̶e̶n̶d̶ f̶o̶r̶ t̶e̶s̶t̶i̶n̶g̶ -̶ D̶O̶N̶E̶
+    -̶ A̶d̶d̶ u̶s̶e̶r̶ A̶u̶t̶h̶ -̶ D̶O̶N̶E̶
+    -̶ A̶d̶d̶ r̶o̶u̶t̶e̶s̶ f̶o̶r̶ t̶y̶p̶e̶ (̶F̶o̶o̶d̶/̶E̶x̶p̶e̶r̶i̶e̶n̶c̶e̶)̶ -̶ D̶O̶N̶E̶
+
+- Day four: 
+    - G̶e̶t̶ t̶o̶k̶e̶n̶ a̶n̶d̶ i̶n̶f̶o̶ s̶a̶v̶e̶d̶ i̶n̶ l̶o̶c̶a̶l̶ s̶t̶o̶r̶a̶g̶e̶ -̶ D̶O̶N̶E̶
+    -̶ C̶o̶m̶p̶l̶e̶t̶e̶ u̶s̶e̶r̶ a̶u̶t̶h̶ s̶e̶t̶ u̶p̶ -̶ D̶O̶N̶E̶
+
+- Day five: 
+    - C̶o̶m̶p̶l̶e̶t̶e̶ R̶E̶A̶D̶M̶E̶ - D̶O̶N̶E̶
+    
