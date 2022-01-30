@@ -13,7 +13,6 @@ const router = express.Router();
 router.get('/', async (req, res, next) => {
 	try {
 		const posts = await Post.find({}).populate('owner');
-
 		res.json(posts);
 	} catch (error) {
 		next(error);
@@ -25,7 +24,6 @@ router.get('/', async (req, res, next) => {
 router.get('/state/:state', async (req, res, next) => {
 	try {
 		const posts = await Post.find({ state: `${req.params.state}` }).populate('owner');
-
 		res.json(posts);
 	} catch (error) {
 		next(error);
@@ -37,14 +35,13 @@ router.get('/state/:state', async (req, res, next) => {
 router.get('/type/:type', async (req, res, next) => {
 	try {
 		const posts = await Post.find({ type: `${req.params.type}` }).populate('owner');
-
 		res.json(posts);
 	} catch (error) {
 		next(error);
 	}
 });
 
-//get one post by id
+// get one post by id
 // http://localhost:3001/api/posts/id
 router.get('/id/:id', async (req, res, next) => {
 	try {
@@ -62,6 +59,7 @@ router.get('/id/:id', async (req, res, next) => {
 // get post by user's name
 router.get('/username/:username', async (req, res, next) => {
 	try {
+		console.log(req.params.username);
 		const name = await Post.find({
 			owner: { username: `${req.params.username}` },
 		});
@@ -118,7 +116,7 @@ router.patch('/id/:id', requireToken, async (req, res, next) => {
 				// partially update the document with the request body's fields
 				{ $set: req.body },
 				{ new: true }
-			);
+			).populate('owner');
 			res.json(postToUpdate);
 		} else {
 			res.sendStatus(404);
