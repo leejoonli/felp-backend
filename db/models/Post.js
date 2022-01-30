@@ -9,6 +9,7 @@ const PostSchema = new Schema({
 	message: String,
 	years_of_residence: Number,
 	type: String,
+	likes: Number,
 	user: {
 		name: String,
 	},
