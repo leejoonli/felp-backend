@@ -13,7 +13,6 @@ const router = express.Router();
 router.get('/', async (req, res, next) => {
 	try {
 		const posts = await Post.find({}).populate('owner');
-
 		res.json(posts);
 	} catch (error) {
 		next(error);
@@ -25,7 +24,6 @@ router.get('/', async (req, res, next) => {
 router.get('/state/:state', async (req, res, next) => {
 	try {
 		const posts = await Post.find({ state: `${req.params.state}` }).populate('owner');
-
 		res.json(posts);
 	} catch (error) {
 		next(error);
@@ -37,14 +35,13 @@ router.get('/state/:state', async (req, res, next) => {
 router.get('/type/:type', async (req, res, next) => {
 	try {
 		const posts = await Post.find({ type: `${req.params.type}` }).populate('owner');
-
 		res.json(posts);
 	} catch (error) {
 		next(error);
 	}
 });
 
-//get one post by id
+// get one post by id
 // http://localhost:3001/api/posts/id
 router.get('/id/:id', async (req, res, next) => {
 	try {
