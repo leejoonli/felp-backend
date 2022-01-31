@@ -15,6 +15,7 @@ describe('GET all posts /api/posts/', () => {
             done();
         });
     });
+    // Test currently does not pass because the test is trying to identity values for each input but it seems like one of our seed data doesn't have an input
     it('Each post should have an id, state, city, title, date, message, years of residence, and type property', (done) => {
         api.get('/api/posts').end((err, res) => {
             res._body.forEach((post) => {
@@ -134,6 +135,7 @@ describe('POST request /api/posts', () => {
             done();
         });
     });
+    // Need to refactor differently because the test is looking for a header but the header seems like it's always going to be not undefined since it looks like it's a concactination of strings
     it('Should require a token', (done) => {
         api.post('/api/posts').send(newPost).set({Authorization: `Bearer ${token}`}).end((err, res) => {
             expect(res.req._header).to.not.be.undefined;
@@ -159,6 +161,7 @@ describe('DELETE request /id/:id', () => {
             done();
         });
     });
+    // Need to refactor differently because the test is looking for a header but the header seems like it's always going to be not undefined since it looks like it's a concactination of strings
     it('Request should require a token', (done) => {
         api.delete(`/api/posts/id/${id}`).set({Authorization: `Bearer ${token}`}).end((err, res) => {
             expect(res.req._header).to.not.be.undefined;
