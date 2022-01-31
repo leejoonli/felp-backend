@@ -35,3 +35,5 @@ app.listen(3001, () => {
 	console.log('connected to port 3001!');
 	console.log('We can get posting...🐧');
 });
+
+module.exports = app;
