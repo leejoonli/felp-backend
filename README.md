@@ -2,7 +2,7 @@
 
 FELP is a place where users can find local spots in their favorite states! Users are able to view recommendations to eat and explore by locals of that state. Ever wanted to go to California? See where users are recommending to go now!
 
-https://felp-beta.netlify.app/
+https://felp-official.netlify.app/
 
 This is the backend repo that handles all of the routes for creating, reading, updating, and deleting posts and users!
 
