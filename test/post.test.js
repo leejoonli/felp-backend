@@ -153,5 +153,16 @@ describe('DELETE request /id/:id', () => {
             done();
         });
     });
-    // it('Request should delete the post')
+    it('Response should return the deleted post', (done) => {
+        api.delete(`/api/posts/id/${id}`).set({Authorization: `Bearer ${token}`}).end((err, res) => {
+            expect(res._body._id).to.equal(id);
+            done();
+        });
+    });
+    it('Request should require a token', (done) => {
+        api.delete(`/api/posts/id/${id}`).set({Authorization: `Bearer ${token}`}).end((err, res) => {
+            expect(res.req._header).to.not.be.undefined;
+            done();
+        });
+    });
 });
