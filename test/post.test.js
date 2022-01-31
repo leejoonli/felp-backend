@@ -134,4 +134,24 @@ describe('POST request /api/posts', () => {
             done();
         });
     });
+    it('Should require a token', (done) => {
+        api.post('/api/posts').send(newPost).set({Authorization: `Bearer ${token}`}).end((err, res) => {
+            expect(res.req._header).to.not.be.undefined;
+            done();
+        });
+    });
+});
+
+// DELETE request test
+describe('DELETE request /id/:id', () => {
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjRiNmQ3MTQ3MjAwNmM2MDgyNjIwMiIsImlhdCI6MTY0MzYwODk4NiwiZXhwIjoxNjQzNjQ0OTg2fQ.m6_YNmQgOZJW-Qm5ivun5SnNfTy8jZlZNh1ixB3fH54";
+    let id;
+    before((done) => {
+        api.get('/api/posts').end((err, res) => {
+            id = res._body[res._body.length - 1]._id;
+            console.log(id);
+            done();
+        });
+    });
+    // it('Request should delete the post')
 });
