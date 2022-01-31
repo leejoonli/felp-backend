@@ -36,3 +36,5 @@ app.listen(app.get("port"), () => {
 	console.log(`connected to port ${app.get('port')}!`);
 	console.log('We can get posting...🐧');
 });
+
+module.exports = app;
