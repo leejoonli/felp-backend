@@ -112,7 +112,7 @@ describe('GET posts by state /state/:state', () => {
 
 // POST request tests
 describe('POST request /api/posts', () => {
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjRiNmQ3MTQ3MjAwNmM2MDgyNjIwMiIsImlhdCI6MTY0MzYwODk4NiwiZXhwIjoxNjQzNjQ0OTg2fQ.m6_YNmQgOZJW-Qm5ivun5SnNfTy8jZlZNh1ixB3fH54";
+    let token = process.env.TOKEN;
     const newPost = {
         state: "CA",
         city: "Los Angeles",
@@ -144,7 +144,7 @@ describe('POST request /api/posts', () => {
 
 // DELETE request test
 describe('DELETE request /id/:id', () => {
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjRiNmQ3MTQ3MjAwNmM2MDgyNjIwMiIsImlhdCI6MTY0MzYwODk4NiwiZXhwIjoxNjQzNjQ0OTg2fQ.m6_YNmQgOZJW-Qm5ivun5SnNfTy8jZlZNh1ixB3fH54";
+    let token = process.env.TOKEN;
     let id;
     before((done) => {
         api.get('/api/posts').end((err, res) => {
