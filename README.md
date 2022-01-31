@@ -46,6 +46,15 @@ https://felp-coders.herokuapp.com/api/posts
 4. open in VScode using `code .`
 5. to run your backend locally, run `npx nodemon`
 
+## Future Improvements
+
+- More keys in the schemas to be able to add more user interactivity on the frontend.
+- We would like to add in a "likes" feature but the user can only like a post once which and communicate to the backend database which would keep track of which posts the user has liked and not liked yet.
+- Currently there are routes set up but not being used by the frontend so we would like to create functionality that enables all the routes to be in use.
+- Currently there is no validation process on signup so we would like to implement a system of required, valid inputs.
+- Update test folder to have test files for both user and post controllers.
+- Update the testing files to better represent what we would like the functionality to be.
+
 ## Contribution Guidelines
 
 ### How to identify bugs
