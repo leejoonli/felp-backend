@@ -1,136 +1,142 @@
-[{
-	"state": "PA",
-	"city": "Philadelphia",
-	"title": "Awesome Cocktail Place",
-	"date": "01-29-22",
-	"message": "Hey all! You must go to Charlie was a sinner! The cocktails are amazing! It is near center city and has an awesome vibe! ",
-	"years_of_residence": 20,
-	"type": "Food",
-	"owner": {
-		"username": "user1",
-		"email": "email1@gmail.com",
-		"password": "user1"
+[
+	{
+		"state": "PA",
+		"city": "Philadelphia",
+		"title": "Awesome Cocktail Place",
+		"date": "01-29-22",
+		"message": "Hey all! You must go to Charlie was a sinner! The cocktails are amazing! It is near center city and has an awesome vibe! ",
+		"years_of_residence": 20,
+		"type": "Food",
+		"owner": {
+			"username": "user1",
+			"email": "email1@gmail.com",
+			"password": "user1"
+		}
+	},
+	{
+		"state": "NJ",
+		"city": "New Brunswick",
+		"title": "Awesome Korean BBQ",
+		"date": "01-14-22",
+		"message": "Hey all! YOu must go to Kim's BBQ! The food slaps! It is near the outskirts of the city on 29th and Heroku! ",
+		"years_of_residence": 10,
+		"type": "Food",
+		"owner": {
+			"username": "user2",
+			"email": "email2@gmail.com",
+			"password": "user2"
+		}
+	},
+	{
+		"state": "CA",
+		"city": "Los Angeles",
+		"title": "Wicked Scallops",
+		"date": "01-17-22",
+		"message": "Hey all! It's basically like the northwest is in LA now! Totally cool!  ",
+		"years_of_residence": 3,
+		"type": "Food",
+		"owner": {
+			"username": "user3",
+			"email": "email3@gmail.com",
+			"password": "user3"
+		}
+	},
+	{
+		"state": "MD",
+		"city": "Baltimore",
+		"title": "Crabby Crabs",
+		"date": "01-04-22",
+		"message": "Bro! This food is wildly good. Crabs for days! ",
+		"years_of_residence": 7,
+		"type": "Food",
+		"owner": {
+			"username": "user4",
+			"email": "email4@gmail.com",
+			"password": "user4"
+		}
+	},
+	{
+		"state": "GA",
+		"city": "Atlanta",
+		"title": "Awesome Pub",
+		"date": "01-27-22",
+		"message": "Howdy! If anyone is in the ATL area, checkout the wrecking brew pub! Cherry Tart Sour Ale is bomb! ",
+		"years_of_residence": 13,
+		"type": "Food",
+		"owner": {
+			"username": "user5",
+			"email": "email5@gmail.com",
+			"password": "user5"
+		}
+	},
+	{
+		"state": "NY",
+		"city": "Brooklyn",
+		"title": "Bar hop",
+		"date": "04-14-21",
+		"message": "Went to this place called the Robinson and had some dope drinks.",
+		"years_of_residence": 12,
+		"type": "Food",
+		"owner": {
+			"username": "user6",
+			"email": "email6@gmail.com",
+			"password": "user6"
+		}
+	},
+	{
+		"state": "PA",
+		"city": "Ardmore",
+		"title": "More Whiskey Please",
+		"date": "05-14-21",
+		"message": "Go to the Whiskey Doctor!",
+		"years_of_residence": 10,
+		"type": "Food",
+		"owner": {
+			"username": "user7",
+			"email": "email7@gmail.com",
+			"password": "user7"
+		}
+	},
+	{
+		"state": "CA",
+		"city": "Los Angeles",
+		"title": "Mama's Shelter",
+		"date": "01-09-21",
+		"message": "Hit that rooftop!! The view is sweet.",
+		"years_of_residence": 4,
+		"type": "Food",
+		"owner": {
+			"username": "user8",
+			"email": "email8@gmail.com",
+			"password": "user8"
+		}
+	},
+	{
+		"state": "MD",
+		"city": "Fredrick",
+		"title": "Bar",
+		"date": "01-14-22",
+		"message": "Found a dive bar near Elk Lane and the Repo Center! It's called the Low Down",
+		"years_of_residence": 7,
+		"type": "Food",
+		"owner": {
+			"username": "user9",
+			"email": "email9@gmail.com",
+			"password": "user9"
+		}
+	},
+	{
+		"state": "NJ",
+		"city": "Wildwood",
+		"title": "Pizza",
+		"date": "01-14-21",
+		"message": "Sam's Pizza! Nuff said! ",
+		"years_of_residence": 9,
+		"type": "Food",
+		"owner": {
+			"username": "user10",
+			"email": "email10@gmail.com",
+			"password": "user10"
+		}
 	}
-	
-},
-{
-	"state": "NJ",
-	"city": "New Brunswick",
-	"title": "Awesome Korean BBQ",
-	"date": "01-14-22",
-	"message": "Hey all! YOu must go to Kim's BBQ! The food slaps! It is near the outskirts of the city on 29th and Heroku! ",
-	"years_of_residence": 10,
-	"type": "Food",
-	"owner": {
-		"username": "user2",
-		"email": "email2@gmail.com",
-		"password": "user2"
-	}
-	
-},
-{
-	"state": "CA",
-	"city": "Los Angeles",
-	"title": "Wicked Scallops",
-	"date": "01-17-22",
-	"message": "Hey all! It's basically like the northwest is in LA now! Totally cool!  ",
-	"years_of_residence": 3,
-	"type": "Food",
-	"owner": {
-		"username": "user3",
-		"email": "email3@gmail.com",
-		"password": "user3"
-	}
-},{
-	"state": "MD",
-	"city": "Baltimore",
-	"title": "Crabby Crabs",
-	"date": "01-04-22",
-	"message": "Bro! This food is wildly good. Crabs for days! ",
-	"years_of_residence": 7,
-	"type": "Food",
-	"owner": {
-		"username": "user4",
-		"email": "email4@gmail.com",
-		"password": "user4"
-	}
-},{
-	"state": "GA",
-	"city": "Atlanta",
-	"title": "Awesome Pub",
-	"date": "01-27-22",
-	"message": "Howdy! If anyone is in the ATL area, checkout the wrecking brew pub! Cherry Tart Sour Ale is bomb! ",
-	"years_of_residence": 13,
-	"type": "Food",
-	"owner": {
-		"username": "user5",
-		"email": "email5@gmail.com",
-		"password": "user5"
-	}
-},{
-	"state": "NY",
-	"city": "Brooklyn",
-	"title": "Bar hop",
-	"date": "04-14-21",
-	"message": "Went to this place called the Robinson and had some dope drinks.",
-	"years_of_residence": 12,
-	"type": "Food",
-	"owner": {
-		"username": "user6",
-		"email": "email6@gmail.com",
-		"password": "user6"
-	}
-},{
-	"state": "PA",
-	"city": "Ardmore",
-	"title": "More Whiskey Please",
-	"date": "05-14-21",
-	"message": "Go to the Whiskey Doctor!",
-	"years_of_residence": 10,
-	"type": "Food",
-	"owner": {
-		"username": "user7",
-		"email": "email7@gmail.com",
-		"password": "user7"
-	}
-},{
-	"state": "CA",
-	"city": "Los Angeles",
-	"title": "Mama's Shelter",
-	"date": "01-09-21",
-	"message": "Hit that rooftop!! The view is sweet.",
-	"years_of_residence": 4,
-	"type": "Food",
-	"owner": {
-		"username": "user8",
-		"email": "email8@gmail.com",
-		"password": "user8"
-	}
-},{
-	"state": "MD",
-	"city": "Fredrick",
-	"title": "Bar",
-	"date": "01-14-22",
-	"message": "Found a dive bar near Elk Lane and the Repo Center! It's called the Low Down",
-	"years_of_residence": 7,
-	"type": "Food",
-	"owner": {
-		"username": "user9",
-		"email": "email9@gmail.com",
-		"password": "user9"
-	}
-},{
-	"state": "NJ",
-	"city": "Wildwood",
-	"title": "Pizza",
-	"date": "01-14-21",
-	"message": "Sam's Pizza! Nuff said! ",
-	"years_of_residence": 9,
-	"type": "Food",
-	"owner": {
-		"username": "user10",
-		"email": "email10@gmail.com",
-		"password": "user10"
-	}
-}
 ]
