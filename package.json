@@ -20,9 +20,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "start": "./node_modules/.bin/netlify-lambda serve .",
-    "build": "./node_modules/.bin/netlify-lambda build ."
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

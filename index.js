@@ -1,13 +1,16 @@
 // Dependencies
 const express = require('express');
-const serverless = require('serverless-http');
+// const serverless = require('serverless-http');
 const app = express();
 const cors = require('cors');
 const postController = require('./controllers/postController');
 const userController = require('./controllers/userController');
 const requestLogger = require('./db/middlewear/request_logger');
 
-module.exports.handler = serverless(app);
+// module.exports.handler = serverless(app);
+
+/*"start": "./node_modules/.bin/netlify-lambda serve .",
+"build": "./node_modules/.bin/netlify-lambda build ."*/
 
 // Require the error handlers
 const {
@@ -28,8 +31,10 @@ app.get('/', (req, res) => {
 
 // Controllers
 // Forward all requests to localhost:3001/api/posts to the post controller
-app.use('/.netlify/functions/api/posts', postController);
-app.use('/.netlify/functions/api', userController);
+//app.use('/.netlify/functions/api/posts', postController);
+//app.use('/.netlify/functions/api', userController);
+app.use('/api/posts', postController);
+app.use('/api', userController);
 
 app.use(handleValidationErrors);
 // The catch all for handling errors
